@@ -3,6 +3,8 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module.js";
 
+const modelUrl = new URL("./model/3ddd.glb", import.meta.url);
+
 //set up render and camera
 const renderer = new three.WebGLRenderer();
 const loader = new GLTFLoader();
@@ -41,7 +43,7 @@ let church;
 let isLoaded = false;
 
 loader.load(
-  `./src/model/3ddd.glb`,
+  modelUrl,
   (gltf) => {
     church = gltf.scene;
     console.log(church);
