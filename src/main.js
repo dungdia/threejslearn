@@ -43,7 +43,7 @@ let church;
 let isLoaded = false;
 
 loader.load(
-  modelUrl,
+  modelUrl.href,
   (gltf) => {
     church = gltf.scene;
     console.log(church);
